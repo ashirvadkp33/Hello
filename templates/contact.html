@@ -8,7 +8,8 @@
 <div class="container mb-3 py-4" style="margin: 0 auto;width: 544px;">
 <h1 class="text-center">Contact Us</h1>
 
-    <form method="post">
+    <form method="post" action="/Contact">
+     {% csrf_token %}
         <div class="form-group">
             <label for="Name">Name</label>
             <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
