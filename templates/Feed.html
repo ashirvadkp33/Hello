@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block title %}Feed
+{% endblock title %}
+{% block body %}
+<form method="post" action="/Feed" style="width: 50%;padding: 12px 20px;margin: 8px 0;box-sizing: border-box;">
+  {% csrf_token %}
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="book name">Book Name</label>
+      <input type="text" class="form-control" id="title" name="title" placeholder="Enter book name">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="book author">Book Author</label>
+      <input type="text" class="form-control" id="author" name="author" placeholder="Enter authors name" >
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="book price">Book price</label>
+    <input type="text" class="form-control" id="price" name="price" placeholder="Enter price">
+  </div>
+  <div class="form-group">
+    <label for="desc">Book description</label>
+    <input type="text" class="form-control" id="desc" name="desc" placeholder="Enter description">
+  </div>
+  <div class="form-group">
+    <label for="img">Choose image</label>
+    <input type="file" class="form-control" id="img" name="img" placeholder="Upload image">
+  </div>
+  <div class="form-group">
+    <label for="rating">Book rating</label>
+    <input type="text" class="form-control" id="rating" name="rating" placeholder="Enter rating out of 10">
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="review">Review</label>
+      <input type="text" class="form-control" id="review" name="review"  placeholder="write your reviews">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="type">Book type</label>
+      <select id="book_type" class="form-control" name="book_type">
+        <option selected>Choose...</option>
+        <option>fiction</option>
+        <option>drama</option>
+        <option>history</option>
+        <option>lifestyle</option>
+        <option>children</option>
+        <option>college</option>
+        <option>biography</option>
+      </select>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputZip">Stock available</label>
+      <input type="integer" class="form-control" id="stock" name="stock">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="gridCheck">
+      <label class="form-check-label" for="gridCheck">
+        Check me out
+      </label>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock body %}
